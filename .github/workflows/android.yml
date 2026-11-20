@@ -14,6 +14,7 @@ jobs:
         with: { distribution: temurin, java-version: 17 }
       - run: npm install
       - run: npx cap add android
+      - run: npx capacitor-assets generate --android
       - run: npx cap sync android
       - run: ./gradlew assembleDebug
         working-directory: android
